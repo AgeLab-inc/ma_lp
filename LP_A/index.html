@@ -1012,13 +1012,14 @@
       gap: 6px;
     }
 
-    .cta-label {
+    .cta-field-label {
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 0.9rem;
       color: rgba(247, 242, 235, 0.9);
       font-family: 'Noto Sans JP', sans-serif;
+      font-style: normal;
     }
 
     .cta-badge {
@@ -2157,19 +2158,19 @@
       </div>
       <form class="cta-form" id="ctaForm" novalidate>
         <div class="cta-field">
-          <label class="cta-label">お名前（姓名）<span class="cta-badge cta-badge--required">必須</span></label>
+          <label class="cta-field-label">お名前（姓名）<span class="cta-badge cta-badge--required">必須</span></label>
           <input class="cta-input" type="text" name="name" placeholder="山田 太郎" />
         </div>
         <div class="cta-field">
-          <label class="cta-label">電話番号<span class="cta-badge cta-badge--required">必須</span></label>
+          <label class="cta-field-label">電話番号<span class="cta-badge cta-badge--required">必須</span></label>
           <input class="cta-input" type="tel" name="phone" placeholder="090-0000-0000" />
         </div>
         <div class="cta-field">
-          <label class="cta-label">会社名<span class="cta-badge cta-badge--optional">任意</span></label>
+          <label class="cta-field-label">会社名<span class="cta-badge cta-badge--optional">任意</span></label>
           <input class="cta-input" type="text" name="company" placeholder="株式会社〇〇" />
         </div>
         <div class="cta-field">
-          <label class="cta-label">メールアドレス<span class="cta-badge cta-badge--optional">任意</span></label>
+          <label class="cta-field-label">メールアドレス<span class="cta-badge cta-badge--optional">任意</span></label>
           <input class="cta-input" type="email" name="email" placeholder="example@mail.com" />
         </div>
         <button class="cta-btn" type="submit">無料で相談してみる（初回60分）</button>
