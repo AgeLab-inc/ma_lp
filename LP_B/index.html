@@ -17,7 +17,7 @@
       --paper: #f7f2eb;
       --paper-dark: #ede5d8;
       --cream: #faf7f2;
-      --muted: #9a8f82;
+      --muted: #635850;
       --border: #d4c9b8;
       --red-accent: #c0392b;
     }
@@ -148,9 +148,9 @@
     .hero-subtitle {
       font-family: 'Noto Serif JP', serif;
       font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-      color: rgba(247, 242, 235, 0.82);
+      color: rgba(247, 242, 235, 1);
       line-height: 2.1;
-      font-weight: 300;
+      font-weight: 400;
       margin-bottom: 48px;
       opacity: 0;
       animation: fadeUp 0.8s ease forwards 0.65s;
@@ -378,7 +378,7 @@
 
     .voice-sub {
       font-size: 0.9rem;
-      color: rgba(247, 242, 235, 0.5);
+      color: rgba(247, 242, 235, 0.85);
       line-height: 1.6;
       padding-left: 28px;
     }
@@ -779,7 +779,7 @@
 
     .case-profile {
       font-size: 0.92rem;
-      color: rgba(26, 21, 16, 0.6);
+      color: rgba(26, 21, 16, 0.85);
       line-height: 1.75;
     }
 
@@ -802,7 +802,7 @@
 
     .case-process {
       font-size: 0.82rem;
-      color: rgba(26, 21, 16, 0.5);
+      color: rgba(26, 21, 16, 0.8);
       line-height: 1.75;
     }
 
@@ -960,7 +960,7 @@
 
     .cta-title {
       font-family: 'Noto Serif JP', serif;
-      font-weight: 300;
+      font-weight: 400;
       font-size: clamp(1.5rem, 3.5vw, 2.2rem);
       color: var(--paper);
       line-height: 1.75;
@@ -997,9 +997,42 @@
     .cta-form {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
       max-width: 480px;
       margin: 0 auto;
+    }
+
+    .cta-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cta-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: rgba(247, 242, 235, 0.9);
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .cta-badge {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+    }
+
+    .cta-badge--required {
+      background: #b05a3a;
+      color: #fff;
+    }
+
+    .cta-badge--optional {
+      background: rgba(247, 242, 235, 0.12);
+      color: rgba(247, 242, 235, 0.55);
+      border: 1px solid rgba(247, 242, 235, 0.15);
     }
 
     .cta-input {
@@ -1106,7 +1139,7 @@
     }
 
     .footer-logo-text {
-      color: rgba(247, 242, 235, 0.5);
+      color: rgba(247, 242, 235, 0.8);
       font-size: 0.78rem;
       border-left: 1px solid rgba(255, 255, 255, 0.12);
       padding-left: 12px;
@@ -1114,7 +1147,7 @@
 
     .footer-tagline {
       font-size: 0.75rem;
-      color: rgba(247, 242, 235, 0.3);
+      color: rgba(247, 242, 235, 0.65);
       letter-spacing: 0.03em;
     }
 
@@ -1127,7 +1160,7 @@
 
     .footer-links a {
       font-size: 0.8rem;
-      color: rgba(247, 242, 235, 0.5);
+      color: rgba(247, 242, 235, 0.8);
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -1145,13 +1178,6 @@
       color: rgba(247, 242, 235, 0.28);
     }
 
-    .footer-disclaimer {
-      font-size: 0.7rem;
-      color: rgba(247, 242, 235, 0.22);
-      line-height: 1.9;
-      padding: 20px 0 36px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━ ANIMATIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     @keyframes fadeUp {
@@ -2038,10 +2064,22 @@
         <div class="cta-reason-item">相談内容は守秘義務のもと厳重に管理します</div>
       </div>
       <div class="cta-form">
-        <input class="cta-input" type="text" placeholder="お名前（姓名）" />
-        <input class="cta-input" type="text" placeholder="会社名" />
-        <input class="cta-input" type="email" placeholder="メールアドレス" />
-        <input class="cta-input" type="tel" placeholder="電話番号（任意）" />
+        <div class="cta-field">
+          <label class="cta-label">お名前（姓名）<span class="cta-badge cta-badge--required">必須</span></label>
+          <input class="cta-input" type="text" placeholder="山田 太郎" required />
+        </div>
+        <div class="cta-field">
+          <label class="cta-label">電話番号<span class="cta-badge cta-badge--required">必須</span></label>
+          <input class="cta-input" type="tel" placeholder="090-0000-0000" required />
+        </div>
+        <div class="cta-field">
+          <label class="cta-label">会社名<span class="cta-badge cta-badge--optional">任意</span></label>
+          <input class="cta-input" type="text" placeholder="株式会社〇〇" />
+        </div>
+        <div class="cta-field">
+          <label class="cta-label">メールアドレス<span class="cta-badge cta-badge--optional">任意</span></label>
+          <input class="cta-input" type="email" placeholder="example@mail.com" />
+        </div>
         <button class="cta-btn">無料で相談してみる（初回60分）</button>
       </div>
       <p class="cta-note">いただいた情報は相談対応以外の目的には使用しません</p>
@@ -2076,17 +2114,14 @@
           <span class="footer-tagline">事業承継判断整理サービス</span>
         </div>
         <nav class="footer-links">
-          <a href="https://age-lab.jp/">会社情報</a>
-          <a href="https://age-lab.notion.site/269f5942764b800ab5b1c71568bc4135">プライバシーポリシー</a>
-          <a href="https://age-lab.notion.site/2f6f5942764b80b7a004c153f75c9a41">利用規約</a>
+          <a href="https://age-lab.jp/" target="_blank" rel="noopener">会社情報</a>
+          <a href="https://age-lab.notion.site/269f5942764b800ab5b1c71568bc4135" target="_blank" rel="noopener">プライバシーポリシー</a>
+          <a href="https://age-lab.notion.site/2f6f5942764b80b7a004c153f75c9a41" target="_blank" rel="noopener">利用規約</a>
         </nav>
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 エイジラボ株式会社 All Rights Reserved.</p>
       </div>
-      <p class="footer-disclaimer">
-        当ウェブサイトで提供する情報は一般的な情報提供を目的としたものであり、投資勧誘または投資・法律・税務に関する助言をすることを目的としておりません。情報の内容については万全を期しておりますが、その内容を保証するものではありません。また、将来の結果を保証するものでもございません。これらの情報によって生じたいかなる損害についても、当社および本情報提供者は一切の責任を負いません。
-      </p>
     </div>
   </footer>
 
