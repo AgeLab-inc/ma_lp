@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(md5 /Users/kaisakihironobu/developments/AGELAB/ma_lp/LP_A/image.jpg /Users/kaisakihironobu/developments/AGELAB/ma_lp/LP_B/image.jpg)",
+      "Bash(md5 /Users/kaisakihironobu/developments/AGELAB/ma_lp/LP_A/image.png /Users/kaisakihironobu/developments/AGELAB/ma_lp/LP_B/image.png)"
+    ],
+    "additionalDirectories": [
+      "/Users/kaisakihironobu/developments/AGELAB/ma_lp/LP_A"
+    ]
+  }
+}
