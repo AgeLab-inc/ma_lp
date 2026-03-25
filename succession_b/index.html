@@ -1174,12 +1174,21 @@
     }
 
     .cta-confidential {
-      display: flex;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(4, auto);
       justify-content: center;
-      gap: 16px;
-      margin-top: 24px;
-      flex-wrap: wrap;
+      gap: 12px;
+      margin: 24px auto 0;
+      max-width: 480px;
+    }
+
+    @media (max-width: 480px) {
+      .cta-confidential {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cta-confidential .cta-badge {
+        text-align: center;
+      }
     }
 
     .cta-badge {
